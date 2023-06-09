@@ -20,4 +20,4 @@ if __name__ == "__main__":
     if find_op(op, ls_op):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print("{} {} {} = {}".format(a, op, b, ls_op[op](a ,b)))
+    print("{} {} {} = {}".format(a, op, b, ls_op[op](a, b)))
