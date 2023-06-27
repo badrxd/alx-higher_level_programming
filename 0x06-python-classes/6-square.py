@@ -5,7 +5,13 @@
 class Square:
     """ Square class """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
+        """Initialize the new square.
+
+        Args:
+            size (int): The size of new square.
+            position (int, int): The position of new square.
+        """
+        self.size = size
         self.position = position
 
     def area(self):
@@ -27,7 +33,7 @@ class Square:
 
     @property
     def position(self):
-        self.position
+        self.__position
 
     @position.setter
     def position(self, value):
