@@ -15,7 +15,7 @@ class Square:
         self.position = position
 
     def area(self):
-        x = self.__size ** 2
+        x = self.__size * self.__size
         return x
 
     @property
@@ -27,13 +27,13 @@ class Square:
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
-            raise TypeError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
     @property
     def position(self):
-        self.__position
+       return self.__position
 
     @position.setter
     def position(self, value):
