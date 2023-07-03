@@ -16,6 +16,7 @@ where a queen must be placed on the chessboard.
 """
 import sys
 
+
 def board_init(n):
     """Initialize the `n`x`n` sized chessboard with 0's."""
     board = []
@@ -23,11 +24,13 @@ def board_init(n):
     [row.append(' ') for i in range(n) for row in board]
     return (board)
 
+
 def board_pcopys(board):
     """Return the deepcopy of a chessboard."""
     if isinstance(board, list):
         return list(map(board_pcopys, board))
     return (board)
+
 
 def get_solution(board):
     """Return a list of lists representation of a solved chessboard."""
@@ -38,6 +41,7 @@ def get_solution(board):
                 solution.append([r, c])
                 break
     return (solution)
+
 
 def xout(board, row, col):
     """X out spots on a chessboard.
@@ -90,6 +94,8 @@ def xout(board, row, col):
             break
         board[r][c] = "x"
         c -= 1
+
+
 def solve_recursive(board, row, queens, solutions):
     """Recursively solve the N-queens puzzle.
 
