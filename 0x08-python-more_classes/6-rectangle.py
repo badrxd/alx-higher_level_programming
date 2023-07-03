@@ -20,7 +20,7 @@ class Rectangle():
                 TypeError : raise error if width / height not int
                 ValueError : raise error if width/height >= 0
         """
-        type(self).number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
