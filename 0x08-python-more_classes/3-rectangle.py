@@ -53,6 +53,7 @@ class Rectangle():
         return perimeter
 
     def __str__(self):
+        """Define the print() representation of a Rectangle."""
         strr = ""
         if (self.__height == 0 or self.__width == 0):
             return("")
@@ -60,4 +61,4 @@ class Rectangle():
             for j in range(self.__width):
                 strr += '#'
             strr += '\n'
-        return strr
+        return strr[:-1]
