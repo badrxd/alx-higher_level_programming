@@ -122,7 +122,6 @@ def solve_recursive(board, row, queens, solutions):
     return (solutions)
 
 
-
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     sys.exit(1)
