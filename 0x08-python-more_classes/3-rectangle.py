@@ -7,14 +7,14 @@ class Rectangle():
     """Represent a rectangle."""
 
     def __init__(self, width=0, height=0):
-    """ the class Rectangle
-    Args:
-            width: The width of Rectangle.
-            height: The height of Rectangle.
-    Raise:
-            TypeError : raise error if width / height not int
-            ValueError : raise error if width/height >= 0
-    """
+        """ the class Rectangle
+        Args:
+                width: The width of Rectangle.
+                height: The height of Rectangle.
+        Raise:
+                TypeError : raise error if width / height not int
+                ValueError : raise error if width/height >= 0
+        """
         self.width = width
         self.height = height
 
