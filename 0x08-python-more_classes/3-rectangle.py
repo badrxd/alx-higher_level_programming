@@ -9,10 +9,10 @@ class Rectangle():
             width: The width of Rectangle.
             height: The height of Rectangle.
     Raise:
-            raise error if width / height not int
-            raise error if width/height >= 0
+            TypeError : raise error if width / height not int
+            ValueError : raise error if width/height >= 0
     Return:
-            return a Rectangle shape desinged by "#" symbole
+            str : string represent the Rectangle shape using '#' symbol.
     """
     def __init__(self, width=0, height=0):
         self.width = width
@@ -43,11 +43,21 @@ class Rectangle():
         self.__height = value
 
     def area(self):
+        """Calculate the area of the Rectangle.
+
+        Returns:
+            int: The area of the Rectangle.
+        """
         area = 0
         area = (self.__height * self.__width)
         return area
 
     def perimeter(self):
+        """Calculate the perimeter of the Rectangle.
+
+        Returns:
+            int: The perimeter of the Rectangle.
+        """
         perimeter = 0
         if (self.__height == 0 or self.__width == 0):
             return perimeter
@@ -55,7 +65,11 @@ class Rectangle():
         return perimeter
 
     def __str__(self):
-        """Define the print() representation of a Rectangle."""
+        """Return a string representation of the Rectangle.
+
+        Returns:
+            str: The string representation of the Rectangle.
+        """
         strr = ""
         if (self.__height == 0 or self.__width == 0):
             return("")
