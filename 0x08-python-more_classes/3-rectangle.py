@@ -4,6 +4,9 @@
 
 
 class Rectangle():
+    """Represent a rectangle."""
+
+    def __init__(self, width=0, height=0):
     """ the class Rectangle
     Args:
             width: The width of Rectangle.
@@ -11,10 +14,7 @@ class Rectangle():
     Raise:
             TypeError : raise error if width / height not int
             ValueError : raise error if width/height >= 0
-    Return:
-            str : string represent the Rectangle shape using '#' symbol.
     """
-    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
@@ -72,7 +72,7 @@ class Rectangle():
         """
         strr = ""
         if (self.__height == 0 or self.__width == 0):
-            return("")
+            return ("")
         for i in range(self.__height):
             for j in range(self.__width):
                 strr += '#'
