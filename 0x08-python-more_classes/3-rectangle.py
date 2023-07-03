@@ -11,6 +11,8 @@ class Rectangle():
     Raise:
             raise error if width / height not int
             raise error if width/height >= 0
+    Return:
+            return a Rectangle shape desinged by "#" symbole
     """
     def __init__(self, width=0, height=0):
         self.width = width
