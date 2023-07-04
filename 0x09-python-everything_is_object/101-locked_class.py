@@ -5,6 +5,6 @@
 
 class LockedClass:
     """
-    Creat object that contains just first name att 
+    Creat object that contains just first name att
     """
     __slots__ = ['first_name']
