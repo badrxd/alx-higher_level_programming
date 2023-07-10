@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines an inherited list => class MyList."""
+"""Defines an inherited list of class MyList."""
 
 
 class MyList(list):
@@ -7,5 +7,4 @@ class MyList(list):
 
     def print_sorted(self):
         """Print a list in sorted."""
-        sorted_ls = sorted(self)
-        print(sorted_ls)
+        print(sorted(self))
