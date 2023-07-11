@@ -9,4 +9,4 @@ def to_json_string(my_obj):
     Args:
         my_obj: data structure that need to be encoded
     """
-    return json.dumps(my_obj)
+    return json.dumps(my_obj, sort_keys=True)
