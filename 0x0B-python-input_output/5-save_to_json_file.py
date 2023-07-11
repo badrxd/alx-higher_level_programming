@@ -10,6 +10,5 @@ def save_to_json_file(my_obj, filename):
         my_obj: data structure that need to be encoded
         filename : txt file where we will write
     """
-    data = json.dumps(my_obj)
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(data)
+    with open(filename, "w", encoding="UTF-8") as f:
+        json.dump(my_obj, f)
