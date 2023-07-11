@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import json
+"""function"""
+
+
+def to_json_string(my_obj):
+    """ function that write in txt file
+    Args:
+        my_obj: data structure that need to be encoded
+    """
+
+    return (json.dumps(my_obj))
