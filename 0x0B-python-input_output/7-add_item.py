@@ -14,4 +14,4 @@ if __name__ == "__main__":
         ls = []
         for i in range(1, len(sys.argv)):
             ls.append(sys.argv[i])
-        save_to_json_file(m_list, "add_item.json")
+        save_to_json_file(ls, "add_item.json")
