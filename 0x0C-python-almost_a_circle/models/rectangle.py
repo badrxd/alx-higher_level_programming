@@ -7,8 +7,17 @@ from models.base import Base
 
 class Rectangle(Base):
     """ Class of Rectangle """
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initializes of the instances """
+        """ Initializes of the instances properties
+        Attributes:
+            width (int): width of rectangle.
+            height (int): height of rectangle.
+            x (int): x.
+            y (int): y.
+            id (int): Identity of the rectangle number.
+        """
+
         self.width = width
         self.height = height
         self.x = x
