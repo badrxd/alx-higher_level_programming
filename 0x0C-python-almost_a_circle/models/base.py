@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module represent class Base """
 import json
+import csv
 
 
 class Base:
@@ -90,3 +91,23 @@ class Base:
             return instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ """
+        filename = cls.__name__ + ".csv"
+        ls = []
+        if list_objs is not None:
+            for obj in list_objs:
+                ls.append(obj.to_dictionary())
+
+        if cls.__name__ == "Rectangle":
+            fieldnames = ["id", "width", "height", "x", "y"]
+
+        if cls.__name__ == "Square":
+            fieldnames = ["id", "size", "x", "y"]
+
+        with open(filename, "w", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerow(ls[0])
