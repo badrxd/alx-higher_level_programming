@@ -94,20 +94,42 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ """
+        """ save att in CSV file """
         filename = cls.__name__ + ".csv"
         ls = []
-        if list_objs is not None:
+
+        if not list_objs:
+            pass
+        else:
             for obj in list_objs:
                 ls.append(obj.to_dictionary())
 
         if cls.__name__ == "Rectangle":
-            fieldnames = ["id", "width", "height", "x", "y"]
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
 
         if cls.__name__ == "Square":
-            fieldnames = ["id", "size", "x", "y"]
+            fieldnames = ['id', 'size', 'x', 'y']
 
-        with open(filename, "w", encoding="utf-8") as csv_file:
+        with open(filename, "w") as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerow(ls[0])
+            writer.writerows(ls)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ loads att from CSV file """
+        filename = cls.__name__ + ".csv"
+        data = []
+        instances = []
+        try:
+            with open(filename, 'r') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
+                    data.append({key : int(value) for key,
+                    value in row.items()})
+            for att in data:
+                instance = cls.create(**att)
+                instances.append(instance)
+            return instances
+        except FileNotFoundError:
+            return []
