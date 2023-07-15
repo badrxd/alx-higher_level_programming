@@ -44,3 +44,30 @@ class Base:
             else:
                 ls = [obj.to_dictionary() for obj in list_objs]
                 file.write(Base.to_json_string(ls))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of JSON string representation of json_string
+        Args:
+            json_string (str): string representing the list of dic
+        Returns:
+            A list of json string
+        """
+        if len(json_string) == 0 or json_string is None:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns the instance with allthe attributes
+        Args:
+            dictionary (dict): A dictionary
+        Returns:
+            An instance with attributes
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
