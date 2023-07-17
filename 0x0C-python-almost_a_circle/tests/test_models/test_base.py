@@ -60,7 +60,7 @@ class TestBase(unittest.TestCase):
         """check from_json_string methode"""
         Base._Base__nb_objects = 0
         listInput = [{'id': 89, 'width': 6, 'height': 5},
-                      {'id': 7, 'width': 8, 'height': 4}]
+                    {'id': 7, 'width': 8, 'height': 4}]
         jsonListInput = Rectangle.to_json_string(listInput)
         listOutput = Rectangle.from_json_string(jsonListInput)
         self.assertTrue(listInput == listOutput)
