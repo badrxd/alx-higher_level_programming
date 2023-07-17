@@ -54,7 +54,7 @@ class Base:
         Returns:
             A list of json string
         """
-        if len(json_string) == 0 or json_string is None:
+        if json_string == '' or json_string is None:
             return []
         return json.loads(json_string)
 
