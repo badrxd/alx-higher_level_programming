@@ -3,6 +3,7 @@ const argv = process.argv.slice(2);
 if (argv.length <= 1) {
   console.log('0');
 } else {
-  argv.sort().reverse();
-  console.log(argv[1]);
+  const list = argv;
+  list.sort().reverse();
+  console.log(list[1]);
 }
