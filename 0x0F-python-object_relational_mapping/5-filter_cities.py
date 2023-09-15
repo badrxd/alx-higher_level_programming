@@ -13,8 +13,8 @@ if __name__ == '__main__':
                          user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities WHERE cities.state_id\
-                = (SELECT id FROM states WHERE name = 'Texas')\
-                ORDER BY cities.id ASC")
+                = (SELECT id FROM states WHERE name = %s)\
+                ORDER BY cities.id ASC", [sys.argv[4]])
     data = cur.fetchall()
     print(", ".join([name[0] for name in data]))
     cur.close()
