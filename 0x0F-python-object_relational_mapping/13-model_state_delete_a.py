@@ -24,10 +24,10 @@ if __name__ == "__main__":
     states = session.query(State).filter(State.name.like('%a%')).all()
 
     # delete any state have letter a.
-    if states:
-        for state in states:
-            session.delete(state)
-            session.commit()
+    for state in states:
+        session.delete(state)
+
+    session.commit()
 
     # Close the session
     session.close()
