@@ -26,5 +26,6 @@ if __name__ == "__main__":
 
     for state, city in data:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
+
     # Close the session
     session.close()
