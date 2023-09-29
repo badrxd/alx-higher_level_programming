@@ -8,12 +8,18 @@ from sys import argv
 if __name__ == "__main__":
     """this code will not be executed if it was imported
     """
-    url = "https://api.github.com/repos/{}/{}/commits".format(
+    if len(argv) > 1:
+        url = "https://api.github.com/repos/{}/{}/commits".format(
             argv[2], argv[1])
-    r = requests.get(url)
-    i = 0
-    list_ = r.json()
-    for i in range(10):
-        owner = list_[i]['commit']['author']['name']
-        sha = list_[i]['sha']
-        print("{}: {}".format(sha, owner))
+        try:
+            r = requests.get(url)
+            i = 0
+            for data in r.json():
+                owner = data['commit']['author']['name']
+                sha = data['sha']
+                print("{}: {}".format(sha, owner))
+                if i == 9:
+                    break
+                i += 1
+        except Exception:
+            pass
