@@ -9,5 +9,8 @@ from sys import argv
 if __name__ == "__main__":
     """this code will not be executed if it was imported
     """
-    r = requests.get(argv[1])
-    print(r.headers['X-Request-Id'])
+    try:
+        r = requests.get(argv[1])
+        print(r.headers['X-Request-Id'])
+    except:
+        pass
