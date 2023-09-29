@@ -9,7 +9,7 @@ if __name__ == "__main__":
     """this code will not be executed if it was imported
     """
     url = "https://api.github.com/repos/{}/{}/commits".format(
-            argv[1], argv[2])
+            argv[2], argv[1])
     r = requests.get(url)
     i = 0
     list_ = r.json()
