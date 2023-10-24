@@ -13,8 +13,8 @@ request(url, async function (err, body) {
     const { characters } = JSON.parse(body.body);
     for (const url of characters) {
       try {
-        const data = await promisReq(url);
-        console.log(JSON.parse(data.body).name);
+        const {body} = await promisReq(url);
+        console.log(JSON.parse(body).name);
       } catch (error) {
         console.error(err);
       }
