@@ -13,7 +13,7 @@ request(url, async function (err, body) {
     const { characters } = JSON.parse(body.body);
     for (const url of characters) {
       try {
-        const {body} = await promisReq(url);
+        const { body } = await promisReq(url);
         console.log(JSON.parse(body).name);
       } catch (error) {
         console.error(err);
